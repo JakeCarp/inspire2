@@ -26,7 +26,24 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6"></div>
-      <div class="col-md-3"></div>
+      <div class="col-md-3 m-3">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#todo-container"
+          aria-expanded="false" aria-controls="collapse">
+          <i class="mdi mdi-arrow-collapse-down"></i> Todo List
+        </button>
+        </p>
+        <div class="collapse" id="todo-container">
+          <div class="card card-body bg-primary row flex-column" id="todos">
+            <form onsubmit="app.toDosController.addToDo()" class="col-12">
+              <div class="row justify-content-around">
+                <input type="text" name="todo" id="todo" class="col-7">
+                <button type="submit" class="btn btn-secondary col-3">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
   </header>
   <main class="container-fluid">
