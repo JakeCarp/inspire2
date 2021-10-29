@@ -7,6 +7,11 @@ function _drawToDos() {
     let todos = ProxyState.todos
     let template = ``
     todos.forEach(t => template += t.Template)
+    if (template != '') {
+        document.getElementById('todos').classList.remove('visually-hidden')
+    } else {
+        document.getElementById('todos').classList.add('visually-hidden')
+    }
     document.getElementById('todos').innerHTML = template
 }
 
@@ -19,7 +24,14 @@ export class ToDosController {
         this.getAllToDos()
         ProxyState.on('todos', _drawToDos)
     }
-
+    //call to service to toggle completed status of checked todo
+    async toggleToDo(id) {
+        try {
+            await toDosService.toggleToDo(id)
+        } catch (error) {
+            console.error('[TOGGLE TODO ERROR]', error.message)
+        }
+    }
     //call to service to remove todo by id
     async deleteToDo(id) {
         try {
@@ -48,6 +60,7 @@ export class ToDosController {
         }
         try {
             await toDosService.addToDo(todoData)
+            form.reset()
         } catch (error) {
             console.error('[ADD TODO ERROR]', error.message)
         }

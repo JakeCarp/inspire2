@@ -17,5 +17,9 @@ main {
   flex-grow: 1;
 }
 
+#todo-opener:active {
+ transform:  rotate(180);
+}
+
 
 

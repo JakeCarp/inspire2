@@ -19,9 +19,20 @@ class ToDosService {
         ProxyState.todos = todos
     }
 
+    //PUT request to sandbox api to updated completed status of target todo
+    async toggleToDo(id) {
+        let todo = ProxyState.todos.find(t => t.id == id)
+        todo.completed = !todo.completed
+        const res = await sandboxApi.put('jakeC/todos/' + id, todo)
+        console.log(res.data);
+        let index = ProxyState.todos.findIndex(t => t.id == id)
+        ProxyState.todos.splice(index, 1, todo)
+        ProxyState.todos = ProxyState.todos
+    }
+
     //DELETE a todo from sandbox api and app state array
     async deleteToDo(id) {
-        await sandboxApi.delete('jakeC/todos' + id)
+        await sandboxApi.delete('jakeC/todos/' + id)
         ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
     }
 }

@@ -26,27 +26,27 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12"></div>
     </div>
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6"></div>
-      <div class="col-md-3 m-3">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#todo-container"
-          aria-expanded="false" aria-controls="collapse">
-          <i class="mdi mdi-arrow-collapse-down"></i> Todo List
-        </button>
-
+    <div class="row justify-content-around">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
       </div>
-    </div>
-    <!-- Collapse -->
-    <div class="collapse card bg-primary" id="todo-container">
-      <div class="card-body row" id="todos">
-      </div>
-      <form onsubmit="app.toDosController.addToDo()" class="col-12">
-        <div class="row justify-content-around">
-          <input type="text" name="todo" id="todo" class="col-7">
-          <button type="submit" class="btn btn-secondary col-3">Add</button>
+      <div class="col-md-4 m-3">
+        <!-- Collapse -->
+        <div class="collapse  card bg-primary p-2" id="todo-container">
+          <div class="card-body row visually-hidden" id="todos">
+          </div>
+          <form onsubmit="app.toDosController.addToDo()" class="col-12">
+            <div class="row justify-content-around">
+              <input type="text" name="todo" id="todo" class="col-7 rounded">
+              <button type="submit" class="btn btn-secondary col-3">Add</button>
+            </div>
+          </form>
         </div>
-      </form>
+        <button class="btn btn-primary my-3" id="todo-opener" type="button" data-bs-toggle="collapse"
+          data-bs-target="#todo-container" aria-expanded="false" aria-controls="collapse">
+          <i class="mdi mdi-arrow-collapse-down "></i> Todo List
+        </button>
+      </div>
     </div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
