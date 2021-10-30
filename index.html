@@ -30,31 +30,36 @@
       <div class="col-md-2"></div>
       <div class="col-md-4">
         <div class="row">
-          <div class="col">
-            <h3 id="quote"></h3>
+          <div id="quote">
+
           </div>
-          <div class="col-3 reveal">
-            <h6 id="author"></h6>
-          </div>
+        </div>
+        <div class="row justify-content-center">
+          <button class="btn btn-secondary rounded-circle col-1 p-0"><i class="mdi mdi-arrow-left"></i></button>
+          <button class="btn btn-secondary rounded-circle col-1 p-0"><i class="mdi mdi-arrow-right"></i></button>
         </div>
       </div>
-      <div class="col-md-4 m-3">
-        <!-- Collapse -->
-        <div class="collapse card bg-primary p-2" id="todo-container">
-          <div class="card-body row visually-hidden" id="todos">
-          </div>
-          <form onsubmit="app.toDosController.addToDo()" class="col-12">
-            <div class="row justify-content-around">
-              <input type="text" name="todo" id="todo" class="col-7 rounded">
-              <button type="submit" class="btn btn-secondary col-3">Add</button>
-            </div>
-          </form>
+      <div class="col-md-2 m-3 d-flex justify-content-end">
+        <div class="row">
+          <!-- TODO figure out why this thing totally refuses to work --probably has to do with beating bootstrap specificity -->
+          <button class="btn btn-primary my-3" id="todo-opener" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#todo-container" aria-expanded="false" aria-controls="offcanvas">
+            <i class="mdi mdi-arrow-left "></i> Todo List
+          </button>
         </div>
-        <!-- TODO figure out why this thing totally refuses to work --probably has to do with beating bootstrap specificity -->
-        <button class="btn btn-primary my-3" id="todo-opener" type="button" data-bs-toggle="collapse"
-          data-bs-target="#todo-container" aria-expanded="false" aria-controls="collapse">
-          <i class="mdi mdi-arrow-collapse-down "></i> Todo List
-        </button>
+        <div class="row">
+          <!-- offcanvas -->
+          <div class="offcanvas offcanvas-end card bg-primary p-2" id="todo-container">
+            <form onsubmit="app.toDosController.addToDo()" class="col-12 mb-3">
+              <div class="row justify-content-around">
+                <input type="text" name="todo" id="todo" class="col-7 rounded">
+                <button type="submit" class="btn btn-secondary col-3">Add</button>
+              </div>
+            </form>
+            <div class="row visually-hidden" id="todos">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
