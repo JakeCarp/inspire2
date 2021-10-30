@@ -6,6 +6,9 @@ class AppState extends EventEmitter {
   bgImg = null
   /** @type {import('./Models/Todo').Todo[]} */
   todos = []
+  /** @type {import('./Models/Quote').Quote} */
+  quote = null
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

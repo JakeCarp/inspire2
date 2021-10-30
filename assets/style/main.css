@@ -14103,10 +14103,6 @@ main {
   flex-grow: 1;
 }
 
-#todo-opener:focus {
-  transform: rotate(180deg);
-}
-
 .reveal:hover {
   transform: translateY(-50);
 }
