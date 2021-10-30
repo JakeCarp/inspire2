@@ -6,7 +6,7 @@ import { ToDosController } from "./Controllers/TodosController.js";
 class App {
   imagesController = new ImagesController()
   toDosController = new ToDosController()
-  quoteController = new QuotesController()
+  quotesController = new QuotesController()
 }
 
 window["app"] = new App();

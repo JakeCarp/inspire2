@@ -8,7 +8,9 @@ class AppState extends EventEmitter {
   todos = []
   /** @type {import('./Models/Quote').Quote} */
   quote = null
-
+  clock12 = true
+  /** @type {import('./Models/Clock').Clock} */
+  clock = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {
