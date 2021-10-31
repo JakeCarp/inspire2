@@ -14103,8 +14103,8 @@ main {
   flex-grow: 1;
 }
 
-.reveal:hover {
-  transform: translateY(-50);
+.quote-hover:hover .reveal {
+  display: flex !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -18,8 +18,10 @@ main {
 }
 
 
-.reveal:hover {
-  transform: translateY(-50);
+.quote-hover:hover {
+ .reveal {
+   display: flex !important;
+ } 
 }
 
 

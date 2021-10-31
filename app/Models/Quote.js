@@ -8,11 +8,11 @@ export class Quote {
 
   get Template() {
     return `
-        <div class="row card bg-primary text-white" >
+        <div class="row card bg-primary text-white quote-hover" >
           <div class="col text-center">
             <h6>${this.content}</h6>
           </div>
-          <div class="col text-center reveal d-flextext-wrap">
+          <div class="col text-center reveal text-wrap d-none">
             <p id="author">-${this.author}</p>
           </div>
         </div>

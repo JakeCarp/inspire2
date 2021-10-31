@@ -12,10 +12,10 @@ class ClockService {
         let day = d.getDay()
         let date = d.getDate()
         let month = d.getMonth()
-        if (!clockVersion) {
+        if (clockVersion) {
             hours <= 12 ? '' : hours -= 12
         }
-        let clock = new Clock({
+        ProxyState.clock = new Clock({
             hours: hours,
             minutes: minutes,
             year: year,
@@ -23,8 +23,7 @@ class ClockService {
             date: date,
             month: month
         })
-        console.log(clock)
-        ProxyState.clock = clock
+        ProxyState.clock = ProxyState.clock
     }
 }
 

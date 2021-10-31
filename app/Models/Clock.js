@@ -15,9 +15,10 @@ export class Clock {
 
     get Template() {
         return `
-        <div>
+        <div class="card bg-primary text-white">
         <h3>${this.hours}:${this.minutes}</h3>
-        <p>${this.getDateString()}, the ${this.date} of ${this.getMonthString()}, ${this.year}</p>
+        <p>${this.getDayString()}, the ${this.date} of ${this.getMonthString()}, ${this.year}</p>
+        <button onclick="app.clocksController.toggleClock()" id="toggle-button">24</button>
         </div>
         `
     }
