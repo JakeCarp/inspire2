@@ -25,6 +25,9 @@ class ClockService {
         })
         ProxyState.clock = ProxyState.clock
     }
+    toggleClock() {
+        ProxyState.clock12 = !ProxyState.clock12
+    }
 }
 
 export const clockService = new ClockService()

@@ -35,6 +35,6 @@ export class ClockController {
         clockService.setTime()
     }
     toggleClock() {
-
+        clockService.toggleClock()
     }
 }

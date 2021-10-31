@@ -18,7 +18,7 @@ export class Clock {
         <div class="card bg-primary text-white">
         <h3>${this.hours}:${this.minutes}</h3>
         <p>${this.getDayString()}, the ${this.date} of ${this.getMonthString()}, ${this.year}</p>
-        <button onclick="app.clocksController.toggleClock()" id="toggle-button">24</button>
+        <button class="btn btn-secondary"  onclick="app.clockController.toggleClock()" id="toggle-button">24</button>
         </div>
         `
     }
