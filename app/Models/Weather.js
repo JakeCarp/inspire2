@@ -10,7 +10,7 @@ export class Weather {
     get Template() {
         return `
         <div class="card bg-primary text-white">
-        <button class="btn btn-secondary" onclick="app.weatherController.toggleWeather()">${ProxyState.celsius ? '°C' : '°F'}</button>
+        <button class="btn btn-secondary" onclick="app.weatherController.toggleWeather()"b>${ProxyState.celsius ? '°C' : '°F'}</button>
         ${this.getConvertedTemp()}
         <p>${this.description.toUpperCase()}</p>
         </div>
