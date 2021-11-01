@@ -11,6 +11,9 @@ class AppState extends EventEmitter {
   clock12 = true
   /** @type {import('./Models/Clock').Clock} */
   clock = null
+  /** @type {import('./Models/Weather').Weather} */
+  weather = null
+  celsius = false
 }
 
 export const ProxyState = new Proxy(new AppState(), {
